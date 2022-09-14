@@ -1,0 +1,14 @@
+<h1>Dwarves & Elves</h1>
+<h2>Edit character</h2>
+
+<form action="/toons/<%= toon['id'] %>" method="POST">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="">Name: </label>
+  <input type="text" name="name" value="<%= toon['name'] %>">
+
+  <label for="">Dwarf or elf:</label>
+  <input type="text" name="d_or_e" value="<%= toon['d_or_e'] %>">
+
+  <button>Update toon</button>
+</form>

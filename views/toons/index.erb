@@ -1,4 +1,4 @@
-<h1>D & E</h1>
+<h1>Dwarves & Elves</h1>
 
 <% if logged_in? %>
   <h2>You are logged in as: <%= current_user['first_name'] %></h2>
@@ -7,11 +7,21 @@
     <form action="/sessions" method="POST">
       <input type="hidden" name="_method" value="delete">
       <button>Logout</button>
+      <a href="/toons/new">Create character</a>
+      <a href="/toons/edit">Edit character</a>
+      <a href="/toons/delete">Delete character</a>
     </form>
-
-    <a href="/toons/new">Create a character</a>
   </section>
+<br>
 
+  <section class="display_character">
+      <% if toons['d_or_e'] == ''%>
+        <p>test</p>
+      <% elsif toons['d_or_e'] == 'dwarf'%>
+        <img src="/toons/dwarf.png" alt=''>
+      <% elsif toons['d_or_e'] == 'elf'%>
+        <img src="/toons/elf.png" alt=''>
+      <% end %>
 
 <% else %>
   <a href="/users/new">Sign up</a>
