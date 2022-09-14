@@ -1,0 +1,19 @@
+<h1>D & E</h1>
+
+<% if logged_in? %>
+  <h2>You are logged in as: <%= current_user['first_name'] %></h2>
+
+  <section class="controls">
+    <form action="/sessions" method="POST">
+      <input type="hidden" name="_method" value="delete">
+      <button>Logout</button>
+    </form>
+
+    <a href="/toons/new">Create a character</a>
+  </section>
+
+
+<% else %>
+  <a href="/users/new">Sign up</a>
+  <a href="/sessions/new">Login</a>
+<% end %>
