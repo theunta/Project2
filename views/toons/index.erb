@@ -12,15 +12,13 @@
       <a href="/toons/delete">Delete character</a>
     </form>
   </section>
-<br>
-
   <section class="display_character">
-      <% if toons['d_or_e'] == ''%>
-        <p>test</p>
-      <% elsif toons['d_or_e'] == 'dwarf'%>
-        <img src="/toons/dwarf.png" alt=''>
-      <% elsif toons['d_or_e'] == 'elf'%>
-        <img src="/toons/elf.png" alt=''>
+      <% if toons[current_user]['d_or_e'] == ''%>
+        <p>no character to display</p>
+      <% elsif toons[current_user]['d_or_e'] == 'dwarf'%>
+        <p> Dwarf: </p>
+      <% elsif toons[current_user]['d_or_e'] == 'elf'%>
+        <p> Elf: </p>
       <% end %>
 
 <% else %>
