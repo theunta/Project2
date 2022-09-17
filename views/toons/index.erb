@@ -1,25 +1,24 @@
 <h1>Dwarves & Elves</h1>
 
 <% if logged_in? %>
-  <h2>You are logged in as: <%= current_user['first_name'] %></h2>
+  <h3>You are logged in as: <%= current_user['first_name'] %></h3>
 
   <section class="controls">
     <form action="/sessions" method="POST">
       <input type="hidden" name="_method" value="delete">
       <button>Logout</button>
-      <a href="/toons/new">Create character</a>
-      <a href="/toons/edit">Edit character</a>
-      <a href="/toons/delete">Delete character</a>
+      <a href="/users/edit">Edit character</a>
     </form>
   </section>
+
   <section class="display_character">
-      <% if toons[current_user]['d_or_e'] == ''%>
-        <p>no character to display</p>
-      <% elsif toons[current_user]['d_or_e'] == 'dwarf'%>
-        <p> Dwarf: </p>
-      <% elsif toons[current_user]['d_or_e'] == 'elf'%>
-        <p> Elf: </p>
-      <% end %>
+      <p>Welcome, <%= current_user['d_or_e'] %>. </p>
+      <p>Are you read to enter battle as a <%= current_user['profession'] %>? </p>
+  </section>
+
+  <section class="game">
+      <button>Enter Battle</button>
+  </section>
 
 <% else %>
   <a href="/users/new">Sign up</a>

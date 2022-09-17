@@ -1,4 +1,5 @@
-<h1>Sign up</h1>
+<h1>Dwarves & Elves</h1>
+<h3>Sign Up</h3>
 <form action="/users" method="POST">
   <label for="">First Name: </label>
   <input type="text" name="first_name">
@@ -16,5 +17,28 @@
   <input type="password" name="password">
   <br>
 
+  <h3>Create a character</h3>
+  <label for="">Race: </label>
+  <input type="radio" id='race1' value="Dwarf" name="d_or_e">
+  <label for='race1'>Dwarf</label>
+  <input type="radio" id='race2' value="Elf" name="d_or_e">
+  <label for='race2'>Elf</label>
+  <br>
+
+  <label for="">Profession: </label>
+  <input type="radio" id='prof1' value="Warrior" name="profession">
+  <label for='prof1'>Warrior</label>
+  <input type="radio" id='prof2' value="Knight" name="profession">
+  <label for='prof2'>Knight</label>
+  <input type="radio" id='prof3' value="Ranger" name="profession">
+  <label for='prof3'>Ranger</label>
+  <input type="radio" id='prof4' value="Rogue" name="profession">
+  <label for='prof4'>Rogue</label>
+  <input type="radio" id='prof5' value="Wizard" name="profession">
+  <label for='prof5'>Wizard</label>
+  <input type="radio" id='prof6' value="Warlock" name="profession">
+  <label for='prof6'>Warlock</label>
+  <p>You can change your race or profession at any time.</p>
+ 
   <button>Sign up</button>
 </form>

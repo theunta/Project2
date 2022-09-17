@@ -1,0 +1,12 @@
+ id | first_name | last_name | email |                       password_digest                        | d_or_e | profession | wins | losses | draws 
+----+------------+-----------+-------+--------------------------------------------------------------+--------+------------+------+--------+-------
+  1 | test       | test      | test  | $2a$12$wKTvpGlZRtf/3nRRjVMO6eymZ0G38yUYr/tb6WX2AHQ.4W.Gd3fHi |        |            |      |        |      
+  2 | test       | test      | test  | $2a$12$JH.QNN83.9E.qkvRI95sYOhQ6HEf3EIkhDxrG7rHRnVGnfMFqd2ta |        |            |      |        |      
+  3 | test       | test      | test  | $2a$12$4UQeqjzvoILspw9ZKXJTdumfWH8P9eW9CgAlY4EhAM4.9jk9u5.C. |        |            |      |        |      
+  4 | asd        | asd       | ads   | $2a$12$BZFg8DtTDjhCQiiH8Nascuag9A4P0Y2ayz7AgHcF1xNEaz1ZtjN4C |        |            |      |        |      
+  5 | dsa        | dsa       | dsa   | $2a$12$jIfouk6t2cdPRzVFG6E9vOEcGnWMvVTgzJJe9nt3CSbvt0hFYmMAG |        |            |      |        |      
+  6 | test       | test      | test  | $2a$12$13fNOGf2Ko063QrZ2EngBOY93ZJA4yyoAWpUWO.YednDxAejulQ26 |        |            |      |        |      
+  7 | test       | test      | test  | $2a$12$FTADq1E3syFiG92mH8O2VudlgBAejBZn48/nGnMr.So5B4opj12Ny |        |            |      |        |      
+  8 | jimbo      | jimbo     | jimbo | $2a$12$AbhMysvSZmN6yLTYwkkb4eDHvtRL9zHX0gOK1rWuSDYHu0h1tfO/. | Elf    |            |      |        |      
+(8 rows)
+
