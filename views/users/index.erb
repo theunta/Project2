@@ -1,0 +1,58 @@
+<h1>Dwarves & Elves</h1>
+
+<% if logged_in? %>
+  <h3>You are logged in as: <%= current_user['first_name'] %></h3>
+  <h3>Wins: <%= current_user['wins'].to_s %></h3>
+  <h3>Losses: <%= current_user['losses'].to_s %></h3>
+  <h3>Draws: <%= current_user['draws'].to_s %></h3>
+
+  <section class="controls">
+    <form action="/sessions" method="POST">
+      <input type="hidden" name="_method" value="delete">
+      <button>Logout</button>
+    </form>
+    <form action="/users/<%= current_user['id'] %>/edit">
+      <input type="hidden" value="Edit">
+      <button>Edit</button>
+    </form>
+  </section>
+
+  <section class="display_character">
+      <p>Welcome, <%= current_user['d_or_e'] %>. </p>
+      <p>Are you read to enter battle as a <%= current_user['profession'] %>? </p>
+  </section>
+
+  <section class="game">
+    <form action='/users/battle' method='post'>
+      <input type="hidden" name='battle' value="Battle">
+      <input class='battle-btn' type='submit' value='Enter Battle' onclick='displayBattle();countdown()'>
+      <p id="monster">Your current enemy is a <%= @npc_type.to_s %>.</p>
+      <p id="leave_town"></p>
+      <div id="countdown"></div>
+
+      <script>
+        function displayBattle() {
+          document.getElementById("leave_town").innerHTML = "You venture out of town and find it.";
+        }
+        function countdown() {
+          var timeleft = 10;
+          var downloadTimer = setInterval(function(){
+            if(timeleft <= 0){
+              clearInterval(downloadTimer);
+              document.getElementById("countdown").innerHTML = "Returning...";
+            } else {
+              document.getElementById("countdown").innerHTML = timeleft + " seconds until result";
+            }
+            timeleft -= 1;
+          }, 1000);
+        }
+      </script>
+            
+    </form>
+  </section>
+
+
+<% else %>
+  <a href="/users/new">Sign up</a>
+  <a href="/sessions/new">Login</a>
+<% end %>
