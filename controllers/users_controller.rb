@@ -42,6 +42,13 @@ patch '/users/:id' do
   redirect '/'
 end
 
+delete '/users/:id' do
+  id = params['id']
+  
+  delete_user(id)
+  redirect '/'
+end
+
 post '/users/battle' do
   # god help me make this code just work magically
   run_game(current_user['id'], current_user['profession'], current_user['wins'], current_user['losses'], current_user['draws'])

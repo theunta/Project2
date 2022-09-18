@@ -14,6 +14,10 @@ def create_user(first_name, last_name, email, password, d_or_e, profession, wins
   run_sql("INSERT INTO users(first_name, last_name, email, password_digest, d_or_e, profession, wins, losses, draws) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)", [first_name, last_name, email, password_digest, d_or_e, profession, wins, losses, draws])
 end
 
+def delete_user(id)
+  run_sql("DELETE FROM users WHERE id = $1", [id])
+end
+
 def find_user_by_id(id)
   run_sql("SELECT * FROM users WHERE id = $1", [id])[0]
 end
