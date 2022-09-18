@@ -20,6 +20,8 @@ get '/users/edit' do
   id = params['id']
   d_or_e = params['d_or_e']
   profession = params['profession']
+
+  erb :'users/edit'
 end
 
 put '/users/:id' do
