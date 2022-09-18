@@ -1,9 +1,10 @@
 CREATE DATABASE d_and_e_db;
 \c d_and_e_db
 
-CREATE TABLE toons(
+CREATE TABLE npc(
   id SERIAL PRIMARY KEY,
-  name TEXT
+  choice TEXT,
+  typeof TEXT
 );
 
 CREATE TABLE users(
