@@ -11,10 +11,10 @@ Includes:
 I had a pretty set idea on how i wanted the website to look and function, it was just a matter of learning SQL, sinatra and ruby. In the end I'm happy with the outcome but would have liked to have spent more time on it to fix bugs.
 
 My wireframing and diagrams:
+![1](https://user-images.githubusercontent.com/110766652/190927980-c43704d9-fbb1-4c01-b311-c504f9823b67.jpg)
+![2](https://user-images.githubusercontent.com/110766652/190927981-b6aba220-ba25-4030-9976-7d6b61ec5451.jpg)
+![3](https://user-images.githubusercontent.com/110766652/190927985-8c9ca32f-6fce-4971-9bcb-37f915a78f85.jpg)
 
-(https://cdn.discordapp.com/attachments/414670235950514178/1021163224147710024/IMG_0330.jpg)
-(https://cdn.discordapp.com/attachments/414670235950514178/1021163223799574569/IMG_0331.jpg)
-(https://cdn.discordapp.com/attachments/414670235950514178/1021163223451443330/IMG_0332.jpg)
 
 ## Bugs
 - css wont load on heroku
