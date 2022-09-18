@@ -8,9 +8,13 @@
       <input type="hidden" name="_method" value="delete">
       <button>Logout</button>
     </form>
-    <form action="/users/edit">
+    <form action="/users/<%= current_user['id'] %>/edit">
       <input type="hidden" value="Edit" />
       <button>Edit</button>
+    </form>
+    <form action="/users/leaderboard">
+      <input type="hidden" value="Score" />
+      <button>Score</button>
     </form>
   </section>
 
@@ -22,6 +26,8 @@
   <section class="game">
       <button>Enter Battle</button>
   </section>
+
+  <p><%= current_user%></p>
 
 <% else %>
   <a href="/users/new">Sign up</a>

@@ -24,7 +24,16 @@ get '/users/edit' do
   erb :'users/edit'
 end
 
-put '/users/:id' do
+get '/users/:id/edit' do
+  id = params['id']
+  d_or_e = params['d_or_e']
+  profession = params['profession']
+  
+  erb :'users/edit'
+end
+
+patch '/users/:id' do
+  # update user data
   id = params['id']
   d_or_e = params['d_or_e']
   profession = params['profession']

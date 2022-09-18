@@ -27,6 +27,6 @@ def get_prof(profession)
 end
 
 def update_user(id, d_or_e, profession)
-  run_sql("UPDATE foods SET d_or_e = $5, profession = $6 WHERE id = $1", [id, d_or_e, profession])
+  run_sql("UPDATE users SET d_or_e = $2, profession = $3 WHERE id = $1", [id, d_or_e, profession])
 end
 
