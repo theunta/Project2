@@ -1,10 +1,10 @@
-<h1>Dwarves & Elves</h1>
+<h1>🧔⚒️ Dwarves & Elves 🧝🏹</h1>
 
 <% if logged_in? %>
   <h3>You are logged in as: <%= current_user['first_name'] %></h3>
-  <h3>Wins: <%= current_user['wins'].to_s %></h3>
-  <h3>Losses: <%= current_user['losses'].to_s %></h3>
-  <h3>Draws: <%= current_user['draws'].to_s %></h3>
+  <h3>⚔️Wins: <%= current_user['wins'].to_s %></h3>
+  <h3>💀Losses: <%= current_user['losses'].to_s %></h3>
+  <h3>🏳️Draws: <%= current_user['draws'].to_s %></h3>
 
   <section class="controls">
     <form action="/sessions" method="POST">
@@ -13,7 +13,11 @@
     </form>
     <form action="/users/<%= current_user['id'] %>/edit">
       <input type="hidden" value="Edit">
-      <button>Edit</button>
+      <button>Edit Character</button>
+    </form>
+    <form action="../review/new">
+      <input type="hidden" value="new">
+      <button>Add a review</button>
     </form>
   </section>
 
@@ -51,6 +55,30 @@
     </form>
   </section>
 
+  <section class='review'>
+    <% review.each do |userreview| %>
+      <section class='userreview'>
+        <header>
+          <section class="controls">
+
+            <form action="/review/<%= userreview['id'] %>/edit" method="POST">
+              <input type="hidden" name="_method" value="Edit">
+              <button>Edit</button>
+            </form>
+
+            <form action="/review/<%= userreview['id'] %>" method="POST">
+              <input type="hidden" name="_method" value="delete">
+              <button>Delete</button>
+            </form>
+
+          </section>
+          <h3>Review from: <%= userreview['username'] %>.</h3>
+        </header>
+
+        <p><%= userreview['contents']%></p>
+      </section>
+    <% end %>
+  </section>
 
 <% else %>
   <a href="/users/new">Sign up</a>

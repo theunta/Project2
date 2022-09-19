@@ -38,28 +38,6 @@ def update_score(id, wins, losses, draws)
   run_sql("UPDATE users SET wins = $2, losses = $3, draws = $4 WHERE id = $1", [id, wins, losses, draws])
 end
 
-def update_npc(typeof)
-  run_sql("UPDATE npc SET typeof = $1", [typeof])
-end
-
-def get_npc(anything)
-  monsters = ["dragon","horde of goblins","giant","troll","pack of orcs", "treant", "ghost", "bandit camp", "giant rat", "demon", "slime", "zombie", "skeleton", "harpy", "giant spider", "spirit", "lizardman", "mimic", "golem", "ghoul", "wraith", "kobold"]
-  anything = monsters.sample
-  update_npc(anything)
-  return anything
-end
-
-def update_npc_choice(choice)
-  run_sql("UPDATE npc SET choice = $1", [choice])
-end
-
-def get_npc_choice(anything)
-  npc_options = ["Strength","Agility","Magic"]
-  anything = npc_options.sample
-  update_npc_choice(anything)
-  return anything
-end
-
 def run_game(id, profession, wins, losses, draws)
   # conversion of profession to rps type
   choice = profession

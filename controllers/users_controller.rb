@@ -1,8 +1,14 @@
 require './models/user'
+require './models/npc'
+require './models/review'
 
 get '/' do
+  review = all_review()
   @npc_type = get_npc(@npc_type)
-  erb :'users/index'
+  
+  erb :'users/index', locals: {
+    review: review
+  }
 end
 
 get '/users/new' do
@@ -53,5 +59,45 @@ post '/users/battle' do
   # god help me make this code just work magically
   run_game(current_user['id'], current_user['profession'], current_user['wins'], current_user['losses'], current_user['draws'])
   sleep 12
+  redirect '/'
+end
+
+get '/review/new' do
+  erb :'review/new'
+end
+
+post '/review' do
+  username = params['username']
+  contents = params['contents']
+
+  create_review(username, contents)
+
+  # if the request is NOT a GET request, then we must redirect instead of using erb.
+  redirect '/'
+end
+
+# the :id is a route parameter
+get '/review/:id/edit' do
+  id = params['id']
+  review = get_review(id)
+  
+  erb :'review/edit', locals: {
+    review: review
+  }
+end
+
+put '/review/:id' do
+  id = params['id']
+  username = params['username']
+  contents = params['contents']
+
+  update_review(id, username, contents)
+  redirect '/'
+end
+
+delete '/review/:id' do
+  id = params['id']
+  
+  delete_review(id)
   redirect '/'
 end

@@ -1,0 +1,13 @@
+<h1>Review Editor</h1>
+<form action="/review/<%= review['id'] %>" method="POST">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="">Username:</label>
+  <input type="text" name="username" value="<%= review['username'] %>">
+
+
+  <label for="">Contents: </label>
+  <input type="text" name="contents" value="<%= review['contents'] %>">
+
+  <button>Update review</button>
+</form>

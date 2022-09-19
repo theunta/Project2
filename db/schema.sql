@@ -19,6 +19,12 @@ CREATE TABLE users(
   draws INTEGER
 );
 
+CREATE TABLE review(
+  id SERIAL PRIMARY KEY,
+  username TEXT,
+  contents TEXT
+);
+
 ALTER TABLE users ADD COLUMN password_digest TEXT;
 
 UNIQUE (user_id);
