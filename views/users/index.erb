@@ -61,10 +61,7 @@
         <header>
           <section class="controls">
 
-            <form action="/review/<%= userreview['id'] %>/edit" method="POST">
-              <input type="hidden" name="_method" value="Edit">
-              <button>Edit</button>
-            </form>
+            <a href="/review/<%= userreview['id'] %>/edit">Edit</a>
 
             <form action="/review/<%= userreview['id'] %>" method="POST">
               <input type="hidden" name="_method" value="delete">
